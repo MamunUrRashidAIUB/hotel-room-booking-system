@@ -8,6 +8,35 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Input selection and styling */
+input::selection,
+textarea::selection {
+  background-color: rgba(168, 85, 247, 0.5);
+  color: white;
+}
+
+input::-webkit-autofill,
+textarea::-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px rgba(15, 23, 42, 0.6) inset !important;
+  -webkit-text-fill-color: white !important;
+}
+
+/* Number input spinner colors */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Date input styling */
+input[type="date"] {
+  color-scheme: dark;
+}
+
 /* Mobile slide panel animation: enters from top-left and settles center */
 .mobile-slide-panel {
   transform: translate(40%, 0);

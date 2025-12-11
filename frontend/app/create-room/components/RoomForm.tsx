@@ -10,8 +10,8 @@ export default function RoomForm() {
   const [form, setForm] = useState({
     roomNo: "",
     type: "",
-    beds: 1,
-    pricePerNight: 0,
+    beds: "",
+    pricePerNight: "",
     description: "",
   });
   const [loading, setLoading] = useState(false);

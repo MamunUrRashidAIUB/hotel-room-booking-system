@@ -46,16 +46,16 @@ export default function BookingPage({ params }: { params: Promise<{ id: string }
   }
 
   return (
-    <div>
-      <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold">Book Room {room.roomNo}</h1>
-      <p className="text-sm sm:text-base text-gray-600 mb-4">
+    <div className="flex flex-col items-center justify-center min-h-[70vh]">
+      <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">Book Room {room.roomNo}</h1>
+      <p className="text-sm sm:text-base text-white/80 mb-4">
         Type: {room.type} | Beds: {room.beds} | Price: ${room.pricePerNight}
       </p>
 
       {room.available ? (
         <BookingForm roomId={id} />
       ) : (
-        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+        <div className="bg-red-500/20 border border-red-400/40 text-red-200 px-4 py-3 rounded-lg backdrop-blur-sm">
           This room is currently unavailable for booking.
         </div>
       )}
