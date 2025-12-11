@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import api from "../../../lib/api";
+
+
+import api from "@/app/lib/api";
 import BookingForm from "./components/BookingForm";
 
 export default function BookingPage({ params }: { params: { id: string } }) {

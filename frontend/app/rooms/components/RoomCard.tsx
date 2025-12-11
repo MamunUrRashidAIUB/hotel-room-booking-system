@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import api from "../../../lib/api";
-import { Room } from "../../../types/room";
+
+
+import api from "@/app/lib/api";
+import { Room } from "@/app/types/room";
 
 export default function RoomCard({ room, reload }: { room: Room; reload: () => void }) {
   const deleteRoom = async () => {

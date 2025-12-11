@@ -1,7 +1,8 @@
 "use client";
 
+import api from "@/app/lib/api";
 import { useState } from "react";
-import api from "../../../lib/api";
+
 
 export default function RoomForm() {
   const [form, setForm] = useState({

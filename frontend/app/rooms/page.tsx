@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 
 import RoomCard from "./components/RoomCard";
-import { Room } from "../../types/room";
+
 import api from "../lib/api";
+import { Room } from "../types/room";
 
 export default function RoomsPage() {
   const [rooms, setRooms] = useState<Room[]>([]);
