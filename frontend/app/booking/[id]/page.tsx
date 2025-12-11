@@ -1,22 +1,23 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 
 
 import api from "@/app/lib/api";
 import BookingForm from "./components/BookingForm";
 
 export default function BookingPage({ params }: { params: { id: string } }) {
+  const { id } = params;
   const [room, setRoom] = useState<any>(null);
 
   const loadRoom = async () => {
-    const res = await api.get(`/rooms/${params.id}`);
+    const res = await api.get(`/rooms/${id}`);
     setRoom(res.data);
   };
 
   useEffect(() => {
     loadRoom();
-  }, []);
+  }, [id]);
 
   if (!room) return <p>Loading...</p>;
 
