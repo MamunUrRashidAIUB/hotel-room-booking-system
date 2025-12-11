@@ -8,8 +8,15 @@ import { Room } from "@/app/types/room";
 
 export default function RoomCard({ room, reload }: { room: Room; reload: () => void }) {
   const deleteRoom = async () => {
-    await api.delete(`/rooms/${room._id}`);
-    reload();
+    if (!confirm(`Are you sure you want to delete Room ${room.roomNo}?`)) {
+      return;
+    }
+    try {
+      await api.delete(`/rooms/${room._id}`);
+      reload();
+    } catch (err) {
+      alert("Error deleting room");
+    }
   };
 
   return (
@@ -26,6 +33,13 @@ export default function RoomCard({ room, reload }: { room: Room; reload: () => v
           href={`/booking/${room._id}`}
         >
           Book
+        </Link>
+
+        <Link
+          className="px-3 py-1 bg-green-600 text-white rounded"
+          href={`/edit-room/${room._id}`}
+        >
+          Edit
         </Link>
 
         <button
