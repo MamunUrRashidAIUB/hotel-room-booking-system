@@ -12,21 +12,21 @@ export default function EditRoomPage({ params }: { params: { id: string } }) {
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
-  const loadRoom = async () => {
-    try {
-      const res = await api.get(`/rooms/${id}`);
-      setRoom(res.data);
-    } catch (err) {
-      alert("Error loading room");
-      router.push("/rooms");
-    } finally {
-      setLoading(false);
-    }
-  };
-
   useEffect(() => {
+    const loadRoom = async () => {
+      try {
+        const res = await api.get(`/rooms/${id}`);
+        setRoom(res.data);
+      } catch (err) {
+        alert("Error loading room");
+        router.push("/rooms");
+      } finally {
+        setLoading(false);
+      }
+    };
+    
     loadRoom();
-  }, [id]);
+  }, [id, router]);
 
   if (loading) return <p>Loading...</p>;
   if (!room) return <p>Room not found</p>;

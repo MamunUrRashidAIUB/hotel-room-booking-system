@@ -1,21 +1,24 @@
 "use client";
 
 import api from "@/app/lib/api";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 
+// Calculate today's date once
+const getTodayString = () => new Date().toISOString().split('T')[0];
 
 export default function BookingForm({ roomId }: { roomId: string }) {
+  const minDate = useMemo(() => getTodayString(), []);
   const [form, setForm] = useState({
     guestName: "",
     nights: 1,
     checkInDate: "",
   });
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const submitBooking = async (e: any) => {
+  const submitBooking = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     // Validation
@@ -80,7 +83,7 @@ export default function BookingForm({ roomId }: { roomId: string }) {
         value={form.checkInDate}
         onChange={handleChange}
         required
-        min={new Date().toISOString().split('T')[0]}
+        min={minDate}
       />
 
       <button className="bg-green-600 text-white px-4 py-2 rounded">
