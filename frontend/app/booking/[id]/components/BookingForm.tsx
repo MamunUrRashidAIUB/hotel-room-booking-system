@@ -40,7 +40,7 @@ export default function BookingForm({ roomId }: { roomId: string }) {
   return (
     <form
       onSubmit={submitBooking}
-      className="bg-white p-6 shadow rounded max-w-lg flex flex-col gap-4"
+      className="bg-white p-4 sm:p-6 shadow-lg rounded-lg w-full max-w-lg flex flex-col gap-3 sm:gap-4"
     >
       {error && (
         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
@@ -51,7 +51,7 @@ export default function BookingForm({ roomId }: { roomId: string }) {
       <input
         name="guestName"
         placeholder="Guest Name"
-        className="border p-2 rounded"
+        className="border p-2 sm:p-3 rounded text-sm sm:text-base"
         onChange={handleChange}
         value={form.guestName}
         required
@@ -63,7 +63,7 @@ export default function BookingForm({ roomId }: { roomId: string }) {
         type="number"
         min="1"
         placeholder="Nights"
-        className="border p-2 rounded"
+        className="border p-2 sm:p-3 rounded text-sm sm:text-base"
         onChange={handleChange}
         value={form.nights}
         required
@@ -74,7 +74,7 @@ export default function BookingForm({ roomId }: { roomId: string }) {
         name="checkInDate"
         type="date"
         min={new Date().toISOString().split("T")[0]}
-        className="border p-2 rounded"
+        className="border p-2 sm:p-3 rounded text-sm sm:text-base"
         onChange={handleChange}
         value={form.checkInDate}
         required
@@ -82,7 +82,7 @@ export default function BookingForm({ roomId }: { roomId: string }) {
       />
 
       <button
-        className="bg-green-600 text-white px-4 py-2 rounded disabled:bg-gray-400"
+        className="bg-green-600 text-white px-4 py-2 sm:py-3 rounded disabled:bg-gray-400 hover:bg-green-700 transition-colors text-sm sm:text-base"
         disabled={loading}
       >
         {loading ? "Booking..." : "Book Now"}

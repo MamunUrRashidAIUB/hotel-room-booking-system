@@ -47,8 +47,8 @@ export default function BookingPage({ params }: { params: Promise<{ id: string }
 
   return (
     <div>
-      <h1 className="text-2xl font-bold">Book Room {room.roomNo}</h1>
-      <p className="text-gray-600 mb-4">
+      <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold">Book Room {room.roomNo}</h1>
+      <p className="text-sm sm:text-base text-gray-600 mb-4">
         Type: {room.type} | Beds: {room.beds} | Price: ${room.pricePerNight}
       </p>
 

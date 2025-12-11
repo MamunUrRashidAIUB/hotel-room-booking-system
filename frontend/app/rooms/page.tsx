@@ -33,10 +33,9 @@ export default function RoomsPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-4">Rooms</h1>
-      
+      <h1 className="text-amber-50 text-xl text-center sm:text-2xl lg:text-3xl font-bold mb-4 sm:mb-6">Rooms</h1>
       {loading ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {[1, 2, 3, 4].map((i) => (
             <div key={i} className="p-4 bg-gray-200 animate-pulse rounded h-48"></div>
           ))}
@@ -59,21 +58,21 @@ export default function RoomsPage() {
       )}
 
       {totalPages > 1 && (
-        <div className="flex justify-center gap-3 mt-6">
+        <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 mt-6">
           <button
             onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
             disabled={currentPage === 1}
-            className="px-4 py-2 bg-blue-600 text-white rounded disabled:bg-gray-300"
+            className="px-3 sm:px-4 py-2 bg-blue-600 text-white rounded disabled:bg-gray-300 text-sm sm:text-base"
           >
             Previous
           </button>
-          <span className="px-4 py-2">
+          <span className="px-2 sm:px-4 py-2 text-sm sm:text-base">
             Page {currentPage} of {totalPages}
           </span>
           <button
             onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
             disabled={currentPage === totalPages}
-            className="px-4 py-2 bg-blue-600 text-white rounded disabled:bg-gray-300"
+            className="px-3 sm:px-4 py-2 bg-blue-600 text-white rounded disabled:bg-gray-300 text-sm sm:text-base"
           >
             Next
           </button>

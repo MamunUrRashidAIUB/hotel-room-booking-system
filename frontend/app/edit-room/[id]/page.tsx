@@ -59,15 +59,15 @@ export default function EditRoomPage({ params }: { params: Promise<{ id: string 
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-4">Edit Room</h1>
+      <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-4 sm:mb-6">Edit Room</h1>
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-6 shadow rounded max-w-lg flex flex-col gap-4"
+        className="bg-white p-4 sm:p-6 shadow-lg rounded-lg w-full max-w-lg flex flex-col gap-3 sm:gap-4"
       >
         <input
           name="roomNo"
           placeholder="Room Number"
-          className="border p-2 rounded"
+          className="border p-2 sm:p-3 rounded text-sm sm:text-base"
           onChange={handleChange}
           value={form.roomNo}
           required
@@ -76,7 +76,7 @@ export default function EditRoomPage({ params }: { params: Promise<{ id: string 
         <input
           name="type"
           placeholder="Room Type"
-          className="border p-2 rounded"
+          className="border p-2 sm:p-3 rounded text-sm sm:text-base"
           onChange={handleChange}
           value={form.type}
           required
@@ -86,7 +86,7 @@ export default function EditRoomPage({ params }: { params: Promise<{ id: string 
           name="beds"
           type="number"
           placeholder="Beds"
-          className="border p-2 rounded"
+          className="border p-2 sm:p-3 rounded text-sm sm:text-base"
           onChange={handleChange}
           value={form.beds}
           required
@@ -96,7 +96,7 @@ export default function EditRoomPage({ params }: { params: Promise<{ id: string 
           name="pricePerNight"
           type="number"
           placeholder="Price per Night"
-          className="border p-2 rounded"
+          className="border p-2 sm:p-3 rounded text-sm sm:text-base"
           onChange={handleChange}
           value={form.pricePerNight}
           required
@@ -105,32 +105,33 @@ export default function EditRoomPage({ params }: { params: Promise<{ id: string 
         <textarea
           name="description"
           placeholder="Description"
-          className="border p-2 rounded"
+          className="border p-2 sm:p-3 rounded text-sm sm:text-base min-h-[80px]"
           onChange={handleChange}
           value={form.description}
         />
 
-        <label className="flex items-center gap-2">
+        <label className="flex items-center gap-2 text-sm sm:text-base">
           <input
             name="available"
             type="checkbox"
             onChange={handleChange}
             checked={form.available}
+            className="w-4 h-4 sm:w-5 sm:h-5"
           />
           <span>Available</span>
         </label>
 
-        <div className="flex gap-3">
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
           <button
             type="submit"
-            className="bg-blue-600 text-white px-4 py-2 rounded"
+            className="bg-blue-600 text-white px-4 py-2 sm:py-3 rounded hover:bg-blue-700 transition-colors text-sm sm:text-base"
           >
             Update Room
           </button>
           <button
             type="button"
             onClick={() => router.push("/rooms")}
-            className="bg-gray-500 text-white px-4 py-2 rounded"
+            className="bg-gray-500 text-white px-4 py-2 sm:py-3 rounded hover:bg-gray-600 transition-colors text-sm sm:text-base"
           >
             Cancel
           </button>
