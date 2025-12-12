@@ -12,10 +12,10 @@ export default function Navbar() {
         {/* Mobile: Brand + Hamburger */}
         <div className="flex items-center justify-between sm:hidden">
           <Link 
-            href="/rooms" 
+            href="/" 
             className="relative font-bold text-base px-3 py-3 rounded-md transition-all duration-300 hover:text-purple-300 group"
           >
-            <span className="relative z-10">Hotel Booking</span>
+            <span className="relative z-10">Home</span>
             <span className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></span>
             <span className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-md opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
           </Link>
@@ -40,11 +40,11 @@ export default function Navbar() {
 
         {/* Desktop nav - all items in one line */}
         <div className="hidden sm:flex items-center justify-center gap-6">
-          <Link 
-            href="/rooms" 
+          <Link
+            href="/"
             className="relative px-4 sm:px-6 py-2 sm:py-3 font-semibold text-base sm:text-lg transition-all duration-300 hover:text-purple-300 group"
           >
-            <span className="relative z-10">Hotel Booking</span>
+            <span className="relative z-10">Home</span>
             <span className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></span>
             <span className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
           </Link>
